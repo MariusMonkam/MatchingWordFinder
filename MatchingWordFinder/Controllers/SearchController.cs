@@ -17,6 +17,9 @@ namespace MatchingWordFinder.Controllers
             }
 
         }
+        string paragraph = request.Paragraph;
+        string searchInput = request.SearchInput.ToLower();
+
 
     }
 }
