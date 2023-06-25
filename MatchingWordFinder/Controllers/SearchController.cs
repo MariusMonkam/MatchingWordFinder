@@ -20,6 +20,8 @@ namespace MatchingWordFinder.Controllers
         string paragraph = request.Paragraph;
         string searchInput = request.SearchInput.ToLower();
 
+        string[] words = paragraph.Split(new[] { ' ', '\t', '\r', '\n', ',', '.' }, StringSplitOptions.RemoveEmptyEntries);
+
 
     }
 }
