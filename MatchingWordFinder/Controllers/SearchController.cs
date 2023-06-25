@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MatchingWordFinder.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MatchingWordFinder.Controllers
 {
@@ -21,6 +22,9 @@ namespace MatchingWordFinder.Controllers
         string searchInput = request.SearchInput.ToLower();
 
         string[] words = paragraph.Split(new[] { ' ', '\t', '\r', '\n', ',', '.' }, StringSplitOptions.RemoveEmptyEntries);
+        
+        List<MatchingWord> matchingWords = new List<MatchingWord>();
+
 
 
     }
