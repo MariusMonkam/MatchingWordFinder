@@ -1,6 +1,4 @@
-﻿using MatchingWordFinder.Models;
-
-namespace MatchingWordFinder
+﻿namespace MatchingWordFinder.Models
 {
     public class SearchResult
     {
