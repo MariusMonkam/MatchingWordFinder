@@ -39,13 +39,14 @@ namespace MatchingWordFinder.Controllers
 
             if (matchingWords.Count > 0)
             {
-                
-                
+                // Highlight the matching words in the paragraph
+                string highlightedParagraph = HighlightMatchingWords(paragraph, matchingWords.Select(mw => mw.Word));
 
                 return Ok(new SearchResult
                 {
                     MatchingWords = matchingWords,
                     Count = matchingWords.Count,
+                    HighlightedParagraph = highlightedParagraph
                 });
             }
             else
@@ -54,6 +55,15 @@ namespace MatchingWordFinder.Controllers
             }
         }
 
-     
+        private string HighlightMatchingWords(string paragraph, IEnumerable<string> matchingWords)
+        {
+            // Use HTML tags to highlight the matching words
+            foreach (string word in matchingWords)
+            {
+                paragraph = Regex.Replace(paragraph, $"\\b{Regex.Escape(word)}\\b", $"<strong>{word}</strong>", RegexOptions.IgnoreCase);
+            }
+
+            return paragraph;
+        }
     }
 }
