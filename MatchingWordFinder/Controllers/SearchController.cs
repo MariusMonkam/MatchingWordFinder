@@ -1,6 +1,11 @@
-﻿namespace MatchingWordFinder.Controllers
+﻿using Microsoft.AspNetCore.Mvc;
+
+namespace MatchingWordFinder.Controllers
 {
-    public class SearchController
+    [ApiController]
+    [Route("[controller]")]
+    public class SearchController : ControllerBase
     {
+        // Controller actions will be added here
     }
 }
