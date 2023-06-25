@@ -11,7 +11,11 @@ namespace MatchingWordFinder.Controllers
         [HttpPost()]
         public IActionResult Search(SearchRequest request)
         {
-            // Method implementation will be added in the next steps
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
         }
 
     }
